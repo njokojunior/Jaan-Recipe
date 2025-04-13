@@ -1,0 +1,16 @@
+{
+  "name": "jaan-restaurant",
+  "version": "1.0.0",
+  "description": "A receipe app for all restaurants",
+  "main": "app.js",
+  "scripts": {
+    "dev": "concurrently \"sass --watch src/scss/main.scss public/style.css\" \"live-server public\""
+  },
+  "author": "njoko junior",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.2",
+    "sass": "^1.86.3"
+  }
+}
