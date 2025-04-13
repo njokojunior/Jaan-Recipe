@@ -19,6 +19,22 @@ body {
   min-height: 100vh;
 }
 
+#auth-button {
+  padding: 1.4rem 0;
+  border-radius: 0.7rem;
+  outline: none;
+  border: none;
+  background-color: #FF4B4B;
+  cursor: pointer;
+  color: #fff;
+  font-size: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+#auth-button:hover {
+  background-color: #c20e0e;
+}
+
 .container {
   min-width: 80%;
   height: 80vh;

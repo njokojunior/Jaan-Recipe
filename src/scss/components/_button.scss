@@ -1,0 +1,15 @@
+@use "./../base/colors" as color;
+@use "./../utils/mixin" as mixin;
+
+#auth-button{
+    @include mixin.buttonStyle(.7rem);
+
+    // Again a mixin can ask for some specific values
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+     
+}
+
+// THis is a design that we will want most of our buttons to use so rather than creating it in a btn class, we can just create a mixin that will apply some specific style to all our buttons and we will be able to customize them here
