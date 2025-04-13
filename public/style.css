@@ -58,10 +58,10 @@ body {
 .section-auth-controls-buttons {
   margin-top: 5.4rem;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 .section-auth-controls-buttons button {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 500;
   background: none;
   outline: none;
@@ -73,6 +73,32 @@ body {
 }
 .section-auth-controls-buttons button:hover {
   border-bottom: 0.2rem solid #FF4B4B;
+}
+.section-auth-form {
+  margin-top: 3rem;
+}
+.section-auth-form .group-input {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.section-auth-form .group-input label {
+  color: #1A1A1A;
+  font-weight: 500;
+}
+.section-auth-form .group-input input {
+  font-size: 1.6rem;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #666;
+  outline: none;
+  border-radius: 0.5rem;
+}
+.section-auth-form-captcha {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

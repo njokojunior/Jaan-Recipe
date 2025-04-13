@@ -1,63 +1,89 @@
-@use './../base/colors' as color;
+@use "./../base/colors" as color;
 
-.section-auth{
-    font-size: 1.6rem;
+.section-auth {
+  font-size: 1.6rem;
+  display: flex;
+  height: 100%;
+
+  & > * {
+    width: 50%;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: bottom;
+  }
+
+  &-content {
+    padding: 9.6rem;
+
+    h1 {
+      font-size: 5.4rem;
+      line-height: 1.7;
+    }
+
+    & > p {
+      font-size: 2.4rem;
+      line-height: 1.4;
+    }
+  }
+
+  &-controls-buttons {
+    margin-top: 5.4rem;
     display: flex;
-    height: 100%;
-    
-    &>*{
-        width: 50%;
-        
-    }
-    
-    img{
-        object-fit: cover;
-        object-position: bottom;
-    }
-
-    &-content{
-        padding: 9.6rem;
-
-        h1{
-            font-size: 5.4rem;
-            line-height: 1.7;
-        }
-
-        &>p{
-            font-size: 2.4rem;
-            line-height: 1.4;
-        }
+    gap: 2rem;
+    button {
+      font-size: 2rem;
+      font-weight: 500;
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      color: color.$text-body;
+      padding: 0.5rem;
+      transition: all 0.1s;
     }
 
-    &-controls-buttons{
-        margin-top: 5.4rem;
-        display: flex;
-        gap: 1rem;
-
-        // I decided to put the buttons inside a div
-
-        button{
-            font-size: 1.6rem;
-            font-weight: 500;
-            background:none;
-            outline: none;
-            border: none;
-            cursor: pointer;
-            color: color.$text-color;
-            padding: .5rem;
-
-            transition: all .1s;
-        }
-
-        button:hover{
-            border-bottom: .2rem solid color.$color-primary;
-        }
-
-
+    button:hover {
+      border-bottom: 0.2rem solid color.$color-primary;
     }
+  }
+
+  &-form {
+    margin-top: 3rem;
+
+    .group-input {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      label {
+        color: color.$text-heading;
+        font-weight: 500;
+      }
+
+      input {
+        font-size: 1.6rem;
+        padding: 1rem;
+
+        font-family: "Poppins", sans-serif;
+
+        border: 1px solid color.$text-body;
+        outline: none;
+
+        border-radius: 0.5rem;
+      }
+
+      
+    }
+
+    &-captcha{
+       display: flex; 
+       justify-content: space-between;
+
+       margin-top: 1rem;
+    }
+  }
 }
-
-
-
 
 
