@@ -2,15 +2,15 @@
   "name": "jaan-restaurant",
   "version": "1.0.0",
   "description": "A receipe app for all restaurants",
-  "main": "app.js",
   "scripts": {
-    "dev": "concurrently \"sass --watch src/scss/main.scss public/style.css\" \"live-server public\""
+    "dev": "concurrently \"sass --watch src/scss/main.scss style.css\" \"parcel index.html\"",
+    "build": "parcel build index.html"
   },
   "author": "njoko junior",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^9.1.2",
-    "live-server": "^1.2.2",
+    "parcel": "^2.14.4",
     "sass": "^1.86.3"
   }
 }
