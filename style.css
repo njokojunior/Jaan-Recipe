@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to right bottom, #E65C2B, #e9b44c);
+  background-image: linear-gradient(to right bottom, #E65C2B, #FF4B4B);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   position: relative;
@@ -24,7 +24,7 @@ body {
   border-radius: 0.7rem;
   outline: none;
   border: none;
-  background-color: #e9b44c;
+  background-color: #FF4B4B;
   cursor: pointer;
   color: #fff;
   font-size: 2rem;
@@ -32,7 +32,7 @@ body {
   width: 100%;
 }
 #auth-button:hover {
-  background-color: #d17340;
+  background-color: #c20e0e;
 }
 
 .container {
@@ -40,7 +40,7 @@ body {
   height: 80vh;
   min-height: 80vh;
   border-radius: 15px;
-  box-shadow: 0 12px 20px 11px #d17340;
+  box-shadow: 0 12px 20px 11px #c20e0e;
   background-color: #FFF;
   position: absolute;
   top: 12.6rem;
@@ -88,7 +88,12 @@ body {
   transition: all 0.1s;
 }
 .section-auth-controls-buttons button:hover {
-  border-bottom: 0.2rem solid #e9b44c;
+  border-bottom: 0.2rem solid #FF4B4B;
+}
+.section-auth-controls-buttons .active-auth {
+  font-weight: bold;
+  color: #1A1A1A;
+  border-bottom: 0.2rem solid #FF4B4B;
 }
 .section-auth-form {
   margin-top: 3rem;

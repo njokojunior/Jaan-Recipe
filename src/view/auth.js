@@ -1,5 +1,6 @@
-const markup = `
-<section id="authentication" class="section-auth">
+const displayLogin = function (userSignIn) {
+  // If the userSigned IN, we want him to have a specific css
+  return ` <section id="authentication" class="section-auth">
             <!-- Navigation to the source img -->
             <!-- Rename image -->
             <img src="./assets/login-img.jpg" alt="restaurant image with tables" class="section-auth-img" />
@@ -11,11 +12,15 @@ const markup = `
         
                 <div class="section-auth-controls">
                     <div class="section-auth-controls-buttons">
-                        <button type="button">Sign In</button>
-                        <button type="button">Sign Up</button>
+                        <button type="button" class="${
+                          userSignIn ? "active-auth" : ""
+                        }">Sign In</button>
+                        <button type="button" class="${
+                          userSignIn ? "" : "active-auth"
+                        }">Sign Up</button>
                     </div>
                     <hr>
-        
+                </div>
                     <form class="section-auth-form">
                         <div class="group-input">
                             <label for="email">Email Address</label>
@@ -38,9 +43,11 @@ const markup = `
         
                         <button class="btn" id="auth-button">Login</button>
                     </form>
-                </div>
+                
             </div>
-        </section>
-`;
+        </section>`;
+};
 
-export default markup;
+// We now have to export the display
+
+export default displayLogin;
