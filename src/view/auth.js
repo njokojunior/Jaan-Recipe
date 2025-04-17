@@ -31,6 +31,11 @@ const displayLogin = function (userSignIn) {
                             <label for="password">Password</label>
                             <input type="password" placeholder="Enter your password" id="password">
                         </div>
+
+                        <div class="group-input ${userSignIn ? "hidden" : ""}" >
+                            <label for="confirm_password">Confirm Password</label>
+                            <input type="password" placeholder="Enter your password" id="confirm_password">
+                        </div>
         
                         <div class="section-auth-form-captcha">
                             <div>
@@ -41,7 +46,9 @@ const displayLogin = function (userSignIn) {
                             <span>Forgot Password</span>
                         </div>
         
-                        <button class="btn" id="auth-button">Login</button>
+                        <button class="btn" id="auth-button">${
+                          userSignIn ? "Login" : "Sign Up"
+                        }</button>
                     </form>
                 
             </div>
