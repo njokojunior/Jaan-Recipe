@@ -1,5 +1,6 @@
 import { signUpUser } from "./src/model/userModal.js";
-import displayLogin from "./src/view/auth.js";
+import displayLogin from "./src/view/authView.js";
+import { landingView } from "./src/view/landingView.js";
 
 const containerEl = document.querySelector(".container");
 let inputEmail;
@@ -7,26 +8,53 @@ let inputPassword;
 let inputConfirmPassword;
 
 let isSignIn = true;
-const users = []; //Initially the array is empty
+const users = []; //That will store a list of users
+// users will contain objects {}
 
-const displayScreen = function (receivedScreen) {
+const displayScreen = (receivedScreen) => {
   containerEl.innerHTML = receivedScreen;
 };
 
-const handleAuthButton = function () {
+const handleAuthButton = () => {
   isSignIn = !isSignIn;
   displayScreen(displayLogin(isSignIn));
+};
+
+const handleSignIn = (email, password) => {
+  // When you open your app for the first time, the users array is empty
+  console.log(
+    users.find((user) => user.email === email && user.password === password)
+  );
+  displayScreen(landingView());
+  // Landing page view
 };
 
 // The handle signup will now call the signupUser in the usermodel.js file
 const handleSignup = function (email, password, confirm_password) {
   // The return value will now be pushed in the users array
-  users.push(signUpUser(email, password, confirm_password));
-  console.log(users); // to preview the array
+  const data = signUpUser(email, password, confirm_password);
+  if (!data) return console.log("invalid data");
+
+  // If data is valid
+  // store data
+  users.push(data); //data will be added at the end of our array
+
+  localStorage.setItem("userdata", JSON.stringify([...users])); // we destructure the data (we spread the data)
 };
 
+const getInitialData = () => {
+  // retrieve data from localStorage
+  // The data you will get will  be a string not an object
+  // To format the data to an object
+  // We insert the data in our users array
+  users.push(...JSON.parse(localStorage.getItem("userdata")));
+  console.log(users);
+};
+
+// function that will run at the start of our program
 const init = function () {
   displayScreen(displayLogin(isSignIn));
+  getInitialData();
 };
 
 init();
@@ -52,23 +80,17 @@ document.addEventListener("click", function (e) {
     // if user is on sigIn view the the button will attempt to sign in
     if (isSignIn) {
       e.preventDefault();
-      console.log("User is trying to signIn");
+      handleSignIn(inputEmail.value, inputPassword.value);
       return;
     }
     //else the button will try to signup
     // and when you try to signup up, the data is passed to the handleSignup function
     else {
-      console.log(
-        inputEmail.value,
-        inputPassword.value,
-        inputConfirmPassword.value
-      );
       handleSignup(
         inputEmail.value,
         inputPassword.value,
         inputConfirmPassword.value
       );
-      console.log("signUp successful");
     }
   }
 });

@@ -50,6 +50,7 @@ body {
   border-radius: 15px;
   box-shadow: 0 12px 20px 11px #c20e0e;
   background-color: #FFF;
+  overflow: hidden;
   position: absolute;
   top: 12.6rem;
   left: 50%;
@@ -128,6 +129,26 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+}
+
+.landing-container {
+  border: 2px solid teal;
+  height: 100%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 3fr;
+  overflow: hidden;
+}
+.landing-container .nav-land {
+  background-color: red;
+  grid-column: 1/-1;
+}
+.landing-container .aside-land {
+  background-color: blue;
+}
+.landing-container .main-land {
+  background-color: grey;
 }
 
 /*# sourceMappingURL=style.css.map */
