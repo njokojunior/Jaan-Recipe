@@ -1,5 +1,4 @@
 const displayLogin = function (userSignIn) {
-  // If the userSigned IN, we want him to have a specific css
   return ` <section id="authentication" class="section-auth">
             <!-- Navigation to the source img -->
             <!-- Rename image -->
@@ -7,8 +6,8 @@ const displayLogin = function (userSignIn) {
         
         
             <div class="section-auth-content">
-                <h1>Welcom to Jaan </h1>
-                <p>Please sign in to continue</p>
+                <h1 class="text-align-center">Welcom to Jaan </h1>
+                <p class="text-align-center">Please sign in to continue</p>
         
                 <div class="section-auth-controls">
                     <div class="section-auth-controls-buttons">
